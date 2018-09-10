@@ -24,4 +24,10 @@ router.get('/ipsum', function(req, res, next) {
       res.render('ipsum', { title: 'Lorem page', contents: content });
   });
 });
+/* GET all contents from mongo . */
+router.get('/contents', function(req, res, next) {
+    Content.find(function(err, content) {
+      res.render('contents', { title: 'Content page', contents: content });
+  });
+});
 module.exports = router;
